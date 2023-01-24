@@ -117,5 +117,6 @@ class _AddProductPageState extends State<AddProductPage> {
         desc: desc!,
         image: image!,
         category: category!);
+   isLoading = false;
   }
 }
