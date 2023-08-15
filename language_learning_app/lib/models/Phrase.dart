@@ -3,9 +3,6 @@ class Phrase {
   final String enName;
   final String sound;
 
-  const Phrase({
-    required this.jpName,
-     required this.enName, 
-     required this.sound
-    });
+  const Phrase(
+      {required this.jpName, required this.enName, required this.sound});
 }

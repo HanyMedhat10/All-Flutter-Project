@@ -1,16 +1,15 @@
+import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:flutter/material.dart';
 import 'package:language_learning_app/models/Item.dart';
-import 'package:assets_audio_player/assets_audio_player.dart';
 
 import '../models/Phrase.dart';
 
 class PhrasesItem extends StatelessWidget {
-  const PhrasesItem({
-    super.key,
-    required this.color,
-    required this.phraseItem,
-    required this.itemType
-  });
+  const PhrasesItem(
+      {super.key,
+      required this.color,
+      required this.phraseItem,
+      required this.itemType});
   final Phrase phraseItem;
   final Color color;
   final String itemType;
@@ -29,14 +28,14 @@ class PhrasesItem extends StatelessWidget {
               children: [
                 Text(
                   phraseItem.jpName,
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.white,
                     fontSize: 18,
                   ),
                 ),
                 Text(
                   phraseItem.enName,
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.white,
                     fontSize: 18,
                   ),
@@ -44,7 +43,7 @@ class PhrasesItem extends StatelessWidget {
               ],
             ),
           ),
-          Spacer(
+          const Spacer(
             flex: 1,
           ),
           IconButton(
@@ -58,7 +57,7 @@ class PhrasesItem extends StatelessWidget {
                 print(e);
               }
             },
-            icon: Icon(
+            icon: const Icon(
               Icons.play_arrow,
               color: Colors.white,
               size: 28,
@@ -88,7 +87,7 @@ class ListItem extends StatelessWidget {
       child: Row(
         children: [
           Container(
-            color: Color(0xfffff4db),
+            color: const Color(0xfffff4db),
             child: Image.asset(item.image!),
           ),
           Padding(
@@ -99,14 +98,14 @@ class ListItem extends StatelessWidget {
               children: [
                 Text(
                   item.jpName,
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.white,
                     fontSize: 18,
                   ),
                 ),
                 Text(
                   item.enName,
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.white,
                     fontSize: 18,
                   ),
@@ -114,7 +113,7 @@ class ListItem extends StatelessWidget {
               ],
             ),
           ),
-          Spacer(
+          const Spacer(
             flex: 1,
           ),
           IconButton(
@@ -128,7 +127,7 @@ class ListItem extends StatelessWidget {
                 print(e);
               }
             },
-            icon: Icon(
+            icon: const Icon(
               Icons.play_arrow,
               color: Colors.white,
               size: 28,

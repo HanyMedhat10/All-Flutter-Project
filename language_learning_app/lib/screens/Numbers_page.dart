@@ -1,13 +1,10 @@
-// ignore: file_names
-import 'dart:collection';
-
 import 'package:flutter/material.dart';
 import 'package:language_learning_app/components/ListItem.dart';
 
 import '../models/Item.dart';
 
 class NumbersPage extends StatelessWidget {
-  NumbersPage({super.key});
+  const NumbersPage({super.key});
   final List<Item> numbers = const [
     Item(
       enName: 'one',
@@ -76,7 +73,7 @@ class NumbersPage extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: const Text('Numbers'),
-          backgroundColor: Color(0xff46322b),
+          backgroundColor: const Color(0xff46322b),
         ),
         body: ListView.builder(
           itemCount: numbers.length,
@@ -84,7 +81,7 @@ class NumbersPage extends StatelessWidget {
             print(index);
             return ListItem(
               item: numbers[index],
-              color: Color(0xffef9235),
+              color: const Color(0xffef9235),
               itemType: 'family_members',
             );
           }),

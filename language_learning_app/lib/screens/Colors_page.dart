@@ -61,7 +61,7 @@ class ColorsPage extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: const Text('Family Members'),
-          backgroundColor: Color(0xff46322b),
+          backgroundColor: const Color(0xff46322b),
         ),
         body: ListView.builder(
           itemCount: familyMember.length,
@@ -69,7 +69,7 @@ class ColorsPage extends StatelessWidget {
             print(index);
             return ListItem(
               item: familyMember[index],
-              color: Color(0xff854cae),
+              color: const Color(0xff854cae),
               itemType: 'colors',
             );
           }),

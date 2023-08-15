@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:language_learning_app/screens/Family_page.dart';
 import 'package:language_learning_app/screens/Phrases_page.dart';
-import 'Colors_page.dart';
+
 import '../components/category_item.dart';
+import 'Colors_page.dart';
 import 'Numbers_page.dart';
 
 class HomePage extends StatelessWidget {
@@ -13,20 +14,20 @@ class HomePage extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Color(0xfffef6db),
+        backgroundColor: const Color(0xfffef6db),
         appBar: AppBar(
-          backgroundColor: Color(0xff46322b),
-          title: Text('Toku'),
+          backgroundColor: const Color(0xff46322b),
+          title: const Text('Toku'),
         ),
         body: Column(
           children: [
             Category(
               text: 'Numbers',
-              color: Color(0xffef9235),
+              color: const Color(0xffef9235),
               onTap: (() {
                 Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => NumbersPage()
+                    MaterialPageRoute(builder: (context) => const NumbersPage()
                         // (context){return NumbersPage();}
                         ));
               }),
@@ -36,33 +37,33 @@ class HomePage extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => FamilyMemberPage(),
+                      builder: (context) => const FamilyMemberPage(),
                     ));
               }),
               text: 'Family Members',
-              color: Color(0xff5d8b3b),
+              color: const Color(0xff5d8b3b),
             ),
             Category(
               onTap: (() {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => ColorsPage(),
+                      builder: (context) => const ColorsPage(),
                     ));
               }),
               text: 'Colors',
-              color: Color(0xff854cae),
+              color: const Color(0xff854cae),
             ),
             Category(
               onTap: (() {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => PhrasesPage(),
+                      builder: (context) => const PhrasesPage(),
                     ));
               }),
               text: 'Phrases',
-              color: Color(0xff51b0d5),
+              color: const Color(0xff51b0d5),
             ),
           ],
         ),
