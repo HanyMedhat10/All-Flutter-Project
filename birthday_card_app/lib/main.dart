@@ -5,12 +5,17 @@ void main() {
 }
 
 class BirthdayCard extends StatelessWidget {
+  const BirthdayCard({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: Scaffold(
         backgroundColor: Color(0xffd2bcd5),
-        body: Center(child: Image(image:AssetImage('images/birthday.png'),)),
+        body: Center(
+            child: Image(
+          image: AssetImage('images/birthday.png'),
+        )),
       ),
     );
   }

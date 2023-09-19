@@ -4,14 +4,15 @@ import 'package:weather_app/cubits/weather_cubit.dart';
 import 'package:weather_app/cubits/weather_cubit/weather_state.dart';
 import 'package:weather_app/models/weather_model.dart';
 import 'package:weather_app/pages/search_page.dart';
-import 'package:weather_app/provider/weather_pronider.dart';
 
 class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Weather App'),
+        title: const Text('Weather App'),
         actions: [
           IconButton(
               onPressed: (() {
@@ -24,23 +25,25 @@ class HomePage extends StatelessWidget {
                   ),
                 );
               }),
-              icon: Icon(Icons.search)),
+              icon: const Icon(Icons.search)),
         ],
       ),
       body: BlocBuilder<WeatherCubit, WeatherState>(
         builder: (context, state) {
           if (state is WeatherLoading) {
-            return Center(
+            return const Center(
               child: CircularProgressIndicator(),
             );
           } else if (state is WeatherSuccess) {
-            return SuccessBody(weatherData: state.weatherModel,);
+            return SuccessBody(
+              weatherData: state.weatherModel,
+            );
           } else if (state is WeatherFailure) {
-            return Center(
+            return const Center(
               child: Text('Something went wron please try again'),
             );
           } else {
-            return DefaultBody();
+            return const DefaultBody();
           }
         },
       ),
@@ -55,7 +58,7 @@ class DefaultBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return const Center(
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -102,28 +105,28 @@ class SuccessBody extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Spacer(
+          const Spacer(
             flex: 3,
           ),
           Text(
-            '${BlocProvider.of<WeatherCubit>(context).cityName!}',
-            style: TextStyle(
+            BlocProvider.of<WeatherCubit>(context).cityName!,
+            style: const TextStyle(
               fontSize: 32,
               fontWeight: FontWeight.bold,
             ),
           ),
           Text(
             'updated:${weatherData.date.hour.toString()}:${weatherData.date.minute.toString()}',
-            style: TextStyle(fontSize: 22),
+            style: const TextStyle(fontSize: 22),
           ),
-          Spacer(),
+          const Spacer(),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Image.asset(weatherData.getImage()),
               Text(
                 '${weatherData.temp.toInt()}',
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 32,
                   fontWeight: FontWeight.bold,
                 ),
@@ -136,15 +139,15 @@ class SuccessBody extends StatelessWidget {
               )
             ],
           ),
-          Spacer(),
+          const Spacer(),
           Text(
-            weatherData.weatherStateName ,
-            style: TextStyle(
+            weatherData.weatherStateName,
+            style: const TextStyle(
               fontSize: 32,
               fontWeight: FontWeight.bold,
             ),
           ),
-          Spacer(
+          const Spacer(
             flex: 5,
           ),
         ],

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
 import 'package:store_app/screens/add_product_page.dart';
 import 'package:store_app/screens/home_pages.dart';
 import 'package:store_app/screens/update_product_page.dart';
-import 'package:store_app/services/update_product.dart';
 
 void main() {
   runApp(const StoreApp());
@@ -18,9 +16,9 @@ class StoreApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: {
-        HomePages.id: (context) => HomePages(),
+        HomePages.id: (context) => const HomePages(),
         UpdateProductPage.id: (context) => UpdateProductPage(),
-        AddProductPage.id:(context) => AddProductPage(),
+        AddProductPage.id: (context) => const AddProductPage(),
       },
       initialRoute: HomePages.id,
     );

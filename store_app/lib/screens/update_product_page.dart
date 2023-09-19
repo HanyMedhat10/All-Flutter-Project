@@ -7,7 +7,7 @@ import 'package:store_app/widgets/custom_button.dart';
 import 'package:store_app/widgets/custom_from_text_field.dart';
 
 class UpdateProductPage extends StatefulWidget {
-  UpdateProductPage({Key? key}) : super(key: key);
+  const UpdateProductPage({Key? key}) : super(key: key);
   static String id = 'UpdateProduct';
 
   @override
@@ -17,7 +17,7 @@ class UpdateProductPage extends StatefulWidget {
 class _UpdateProductPageState extends State<UpdateProductPage> {
   String? ProductName, desc, image;
   bool isLoading = false;
- double? price;
+  double? price;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class _UpdateProductPageState extends State<UpdateProductPage> {
       inAsyncCall: isLoading,
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Update Product',
+          title: const Text('Update Product',
               style: TextStyle(
                 color: Colors.black,
               )),
@@ -40,7 +40,7 @@ class _UpdateProductPageState extends State<UpdateProductPage> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 100,
                 ),
                 CustomFormTextField(
@@ -49,7 +49,7 @@ class _UpdateProductPageState extends State<UpdateProductPage> {
                   },
                   hintText: 'Product Name',
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 CustomFormTextField(
@@ -58,17 +58,17 @@ class _UpdateProductPageState extends State<UpdateProductPage> {
                   },
                   hintText: 'description',
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 CustomFormTextField(
                   inputType: TextInputType.number,
                   onChanged: (data) {
-                    price =double.parse(data) ;
+                    price = double.parse(data);
                   },
                   hintText: 'price',
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 CustomFormTextField(
@@ -77,22 +77,22 @@ class _UpdateProductPageState extends State<UpdateProductPage> {
                   },
                   hintText: 'image',
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 50,
                 ),
                 CustomButton(
                   text: 'Update',
-                  onTap: () async{
+                  onTap: () async {
                     isLoading = true;
                     setState(() {});
                     try {
-                     await UpdateProduct(product);
+                      await UpdateProduct(product);
                       showSnackBar(context, 'success');
                     } catch (e) {
                       showSnackBar(context, e.toString());
                     }
-                      isLoading = false;
-                      setState(() {});
+                    isLoading = false;
+                    setState(() {});
                   },
                 ),
               ],
@@ -103,15 +103,14 @@ class _UpdateProductPageState extends State<UpdateProductPage> {
     );
   }
 
-  Future<void> UpdateProduct(ProductModel product)async {
-   await UpdataProductServices().updateProduct(
-        id:product.id ,
-        title: ProductName==null?product.title:ProductName!,
-        price: (price==null?product.price:price!).toString(),
-        desc: desc==null?product.description:desc!,
-        image: image==null?product.image:image!,
-        category: product.category
-        );
+  Future<void> UpdateProduct(ProductModel product) async {
+    await UpdataProductServices().updateProduct(
+        id: product.id,
+        title: ProductName == null ? product.title : ProductName!,
+        price: (price == null ? product.price : price!).toString(),
+        desc: desc == null ? product.description : desc!,
+        image: image == null ? product.image : image!,
+        category: product.category);
     isLoading = false;
   }
 }

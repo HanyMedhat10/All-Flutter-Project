@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:store_app/models/product_model.dart';
 import 'package:store_app/screens/update_product_page.dart';
-import 'package:store_app/services/update_product.dart';
 
 class CustomCard extends StatelessWidget {
   CustomCard({
@@ -13,7 +12,7 @@ class CustomCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (() {
-        Navigator.pushNamed(context, UpdateProductPage.id,arguments: product);
+        Navigator.pushNamed(context, UpdateProductPage.id, arguments: product);
       }),
       child: Stack(
         clipBehavior: Clip.none,
@@ -26,7 +25,7 @@ class CustomCard extends StatelessWidget {
                 blurRadius: 50,
                 color: Colors.grey.withOpacity(.2),
                 spreadRadius: 20,
-                offset: Offset(10, 10),
+                offset: const Offset(10, 10),
               ),
             ]),
             child: Card(
@@ -40,12 +39,12 @@ class CustomCard extends StatelessWidget {
                   children: [
                     Text(
                       product.title.substring(0, 6),
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Colors.grey,
                         fontSize: 16,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 3,
                     ),
                     Row(
@@ -53,12 +52,12 @@ class CustomCard extends StatelessWidget {
                       children: [
                         Text(
                           r'$' '${product.price.toString()}',
-                          style: TextStyle(
+                          style: const TextStyle(
                             color: Colors.grey,
                             fontSize: 16,
                           ),
                         ),
-                        Icon(
+                        const Icon(
                           Icons.favorite,
                           color: Colors.red,
                         )

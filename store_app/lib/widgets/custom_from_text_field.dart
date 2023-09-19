@@ -21,12 +21,12 @@ class CustomFormTextField extends StatelessWidget {
       onChanged: onChanged,
       decoration: InputDecoration(
         hintText: hintText,
-        hintStyle: TextStyle(),
+        hintStyle: const TextStyle(),
         enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(),
+          borderSide: const BorderSide(),
           borderRadius: BorderRadius.circular(8),
         ),
-        border: OutlineInputBorder(
+        border: const OutlineInputBorder(
           borderSide: BorderSide(),
         ),
       ),

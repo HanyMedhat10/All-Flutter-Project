@@ -17,12 +17,12 @@ class HomePages extends StatelessWidget {
               onPressed: () {
                 Navigator.pushNamed(context, AddProductPage.id);
               },
-              icon: Icon(FontAwesomeIcons.cartPlus, color: Colors.black))
+              icon: const Icon(FontAwesomeIcons.cartPlus, color: Colors.black))
         ],
         backgroundColor: Colors.white,
         elevation: 0,
         centerTitle: true,
-        title: Text(
+        title: const Text(
           'New Trend',
           style: TextStyle(
             color: Colors.black,
@@ -39,7 +39,8 @@ class HomePages extends StatelessWidget {
                 return GridView.builder(
                     itemCount: products.length,
                     clipBehavior: Clip.none,
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
                       childAspectRatio: 1.5,
                       crossAxisSpacing: 10,
@@ -51,7 +52,7 @@ class HomePages extends StatelessWidget {
                       );
                     });
               } else {
-                return Center(child: CircularProgressIndicator());
+                return const Center(child: CircularProgressIndicator());
               }
             }),
           )),

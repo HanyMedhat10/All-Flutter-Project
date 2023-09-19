@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
-import 'package:store_app/models/product_model.dart';
 import 'package:store_app/services/add_product_services.dart';
 import 'package:store_app/widgets/custom_from_text_field.dart';
 
@@ -25,7 +24,7 @@ class _AddProductPageState extends State<AddProductPage> {
       inAsyncCall: isLoading,
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Add Product',
+          title: const Text('Add Product',
               style: TextStyle(
                 color: Colors.black,
               )),
@@ -38,7 +37,7 @@ class _AddProductPageState extends State<AddProductPage> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 100,
                 ),
                 CustomFormTextField(
@@ -47,7 +46,7 @@ class _AddProductPageState extends State<AddProductPage> {
                   },
                   hintText: 'Product Name',
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 CustomFormTextField(
@@ -56,7 +55,7 @@ class _AddProductPageState extends State<AddProductPage> {
                   },
                   hintText: 'Category',
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 CustomFormTextField(
@@ -65,7 +64,7 @@ class _AddProductPageState extends State<AddProductPage> {
                   },
                   hintText: 'description',
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 CustomFormTextField(
@@ -75,7 +74,7 @@ class _AddProductPageState extends State<AddProductPage> {
                   },
                   hintText: 'price',
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 CustomFormTextField(
@@ -84,7 +83,7 @@ class _AddProductPageState extends State<AddProductPage> {
                   },
                   hintText: 'image',
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 50,
                 ),
                 CustomButton(
@@ -117,6 +116,6 @@ class _AddProductPageState extends State<AddProductPage> {
         desc: desc!,
         image: image!,
         category: category!);
-   isLoading = false;
+    isLoading = false;
   }
 }

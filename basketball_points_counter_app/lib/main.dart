@@ -8,6 +8,8 @@ void main() {
 }
 
 class pointsCouter extends StatelessWidget {
+  const pointsCouter({super.key});
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -21,7 +23,7 @@ class pointsCouter extends StatelessWidget {
 }
 
 class HomePage extends StatelessWidget {
-  HomePage({Key? key}) : super(key: key);
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +32,7 @@ class HomePage extends StatelessWidget {
         return Scaffold(
           appBar: AppBar(
             backgroundColor: Colors.orange,
-            title: Text('Ponits Counter'),
+            title: const Text('Ponits Counter'),
           ),
           body: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -38,12 +40,12 @@ class HomePage extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Container(
+                  SizedBox(
                     height: 500,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Text(
+                        const Text(
                           'Team A',
                           style: TextStyle(
                             fontSize: 32,
@@ -51,20 +53,20 @@ class HomePage extends StatelessWidget {
                         ),
                         Text(
                           '${BlocProvider.of<CounterCubit>(context).temAPints}',
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 150,
                           ),
                         ),
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.orange,
-                            minimumSize: Size(150, 50),
+                            minimumSize: const Size(150, 50),
                           ),
                           onPressed: () {
                             BlocProvider.of<CounterCubit>(context)
                                 .TeamPIncrement(team: 'A', buttonNumber: 1);
                           },
-                          child: Text(
+                          child: const Text(
                             'Add 1 Point',
                             style: TextStyle(
                               fontSize: 18,
@@ -76,13 +78,13 @@ class HomePage extends StatelessWidget {
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.orange,
-                            minimumSize: Size(150, 50),
+                            minimumSize: const Size(150, 50),
                           ),
                           onPressed: () {
                             BlocProvider.of<CounterCubit>(context)
                                 .TeamPIncrement(team: 'A', buttonNumber: 2);
                           },
-                          child: Text(
+                          child: const Text(
                             'Add 2 Point',
                             style: TextStyle(
                               fontSize: 18,
@@ -95,13 +97,13 @@ class HomePage extends StatelessWidget {
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.orange,
-                            minimumSize: Size(150, 50),
+                            minimumSize: const Size(150, 50),
                           ),
                           onPressed: () {
                             BlocProvider.of<CounterCubit>(context)
                                 .TeamPIncrement(team: 'A', buttonNumber: 3);
                           },
-                          child: Text(
+                          child: const Text(
                             'Add 3 Point',
                             style: TextStyle(
                               fontSize: 18,
@@ -113,21 +115,21 @@ class HomePage extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Container(
+                  SizedBox(
                     height: 500,
-                    child: VerticalDivider(
+                    child: const VerticalDivider(
                       color: Colors.grey,
                       indent: 50,
                       endIndent: 50,
                       thickness: 1,
                     ),
                   ),
-                  Container(
+                  SizedBox(
                     height: 500,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Text(
+                        const Text(
                           'Team B',
                           style: TextStyle(
                             fontSize: 32,
@@ -135,20 +137,20 @@ class HomePage extends StatelessWidget {
                         ),
                         Text(
                           '${BlocProvider.of<CounterCubit>(context).temBPints}',
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 150,
                           ),
                         ),
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.orange,
-                            minimumSize: Size(150, 50),
+                            minimumSize: const Size(150, 50),
                           ),
                           onPressed: () {
                             BlocProvider.of<CounterCubit>(context)
                                 .TeamPIncrement(team: 'B', buttonNumber: 1);
                           },
-                          child: Text(
+                          child: const Text(
                             'Add 1 Point',
                             style: TextStyle(
                               fontSize: 18,
@@ -160,13 +162,13 @@ class HomePage extends StatelessWidget {
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.orange,
-                            minimumSize: Size(150, 50),
+                            minimumSize: const Size(150, 50),
                           ),
                           onPressed: () {
                             BlocProvider.of<CounterCubit>(context)
                                 .TeamPIncrement(team: 'B', buttonNumber: 2);
                           },
-                          child: Text(
+                          child: const Text(
                             'Add 2 Point',
                             style: TextStyle(
                               fontSize: 18,
@@ -179,13 +181,13 @@ class HomePage extends StatelessWidget {
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.orange,
-                            minimumSize: Size(150, 50),
+                            minimumSize: const Size(150, 50),
                           ),
                           onPressed: () {
                             BlocProvider.of<CounterCubit>(context)
                                 .TeamPIncrement(team: 'B', buttonNumber: 3);
                           },
-                          child: Text(
+                          child: const Text(
                             'Add 3 Point',
                             style: TextStyle(
                               fontSize: 18,
@@ -202,13 +204,13 @@ class HomePage extends StatelessWidget {
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.orange,
-                  minimumSize: Size(150, 50),
+                  minimumSize: const Size(150, 50),
                 ),
                 onPressed: () {
                   BlocProvider.of<CounterCubit>(context).temAPints = 0;
                   BlocProvider.of<CounterCubit>(context).temBPints = 0;
                 },
-                child: Text(
+                child: const Text(
                   'Reset',
                   style: TextStyle(
                     fontSize: 23,
